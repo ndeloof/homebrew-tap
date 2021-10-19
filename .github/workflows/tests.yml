@@ -11,8 +11,7 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Set up git
-        uses: Homebrew/actions/git-user-config@master
+      - uses: actions/checkout@v2
         
       - name: Set up Homebrew
         id: set-up-homebrew
