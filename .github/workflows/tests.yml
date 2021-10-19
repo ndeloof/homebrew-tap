@@ -11,9 +11,14 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Set up git
+        uses: Homebrew/actions/git-user-config@master
+        
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
+        with:
+          debug: true
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
